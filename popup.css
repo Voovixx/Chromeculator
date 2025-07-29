@@ -1,0 +1,248 @@
+:root {
+    --font-main: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'Consolas', 'Courier New', monospace;
+    --bg-main: #ffffff;
+    --bg-secondary: #f0f3f5;
+    --bg-history: #f9f9ff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #555;
+    --text-link: #0066cc;
+    --text-result: #00008b;
+    --text-error: #d93025;
+    --text-success: #22863a;
+    --border-color: #e0e0e0;
+    --input-bg: #ffffff;
+    --input-border: #cccccc;
+    --input-focus-border: #007bff;
+    --scrollbar-thumb: #c1c1c1;
+    --scrollbar-track: #f1f1f1;
+    --button-copy-bg: #f5f5f5;
+    --button-copy-text: #333;
+    --button-copy-bg-success: #e8f5e9;
+    --button-grid-bg: #f9f9f9;
+    --button-digit-bg: #fff;
+    --button-digit-text: #000;
+    --button-operator-bg: #f0f0f0;
+    --button-equals-bg: #007bff;
+    --button-equals-text: #fff;
+}
+body.dark-theme {
+    --bg-main: #1e1e2f;
+    --bg-secondary: #2a2a3e;
+    --bg-history: #252538;
+    --text-primary: #e0e0e0;
+    --text-secondary: #aaaaaa;
+    --text-link: #58a6ff;
+    --text-result: #79c0ff;
+    --text-error: #f87970;
+    --text-success: #81C784;
+    --border-color: #3a3a50;
+    --input-bg: #2a2a3e;
+    --input-border: #555555;
+    --input-focus-border: #58a6ff;
+    --scrollbar-thumb: #555;
+    --scrollbar-track: #333;
+    --button-copy-bg: #2a2a3e;
+    --button-copy-text: #e0e0e0;
+    --button-copy-bg-success: #2e7d32;
+    --button-grid-bg: #1e1e2f;
+    --button-digit-bg: #2a2a3e;
+    --button-digit-text: #e0e0e0;
+    --button-operator-bg: #3a3a50;
+    --button-equals-bg: #58a6ff;
+    --button-equals-text: #1e1e2f;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Важно, чтобы скроллбары были внутри .history-area */
+}
+body {
+  min-width: 400px;
+  min-height: 400px;
+  font-family: var(--font-main);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  transition: background-color 0.2s, color 0.2s;
+  display: flex;
+}
+.calculator-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+.header .title {
+  font-family: var(--font-mono);
+  font-weight: bold;
+  font-size: 16px;
+}
+.header .links a {
+  font-family: var(--font-main);
+  font-size: 13px;
+  margin-left: 15px;
+  color: var(--text-link);
+  text-decoration: none;
+  cursor: pointer;
+}
+.header .links a:hover {
+    text-decoration: underline;
+}
+.history-area {
+  flex-grow: 1;
+  padding: 10px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  background-color: var(--bg-history);
+  overflow: auto; /* Не 'hidden', а 'auto' */
+}
+.history-area::-webkit-scrollbar {
+  width: 8px;
+}
+.history-area::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+.history-area::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+.history-area::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+body.dark-theme .history-area::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+.history-item {
+  margin-bottom: 12px;
+}
+.history-item .query {
+  color: var(--text-secondary);
+}
+.history-item .result {
+  font-weight: bold;
+  color: var(--text-result);
+  margin-left: 15px;
+}
+.history-item .result.error {
+    color: var(--text-error);
+}
+.history-item .query, .history-item .result:not(.error) {
+    cursor: pointer;
+}
+.history-item .query:hover, .history-item .result:not(.error):hover {
+    opacity: 0.8;
+}
+.chart-container {
+    background-color: var(--bg-main);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 12px;
+    border: 1px solid var(--border-color);
+}
+.input-area {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
+  padding: 8px 10px;
+  background-color: var(--bg-main);
+  flex-shrink: 0;
+  gap: 8px;
+}
+#copyButton {
+    padding: 6px 10px;
+    font-family: var(--font-main);
+    font-size: 12px;
+    background-color: var(--button-copy-bg);
+    color: var(--button-copy-text);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    flex-shrink: 0;
+}
+#copyButton:hover {
+    opacity: 0.8;
+}
+#copyButton.copied-feedback {
+    background-color: var(--button-copy-bg-success);
+    color: var(--text-success);
+    border-color: var(--text-success);
+    pointer-events: none;
+}
+.input-area input {
+  flex-grow: 1;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+}
+.input-area input:focus {
+  outline: none;
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--input-focus-border) 25%, transparent);
+}
+.keypad-container {
+    border-top: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+.keypad-container.hidden {
+    display: none;
+}
+.dynamic-buttons {
+    padding: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    background-color: var(--button-grid-bg);
+}
+.dynamic-buttons button {
+    padding: 4px 8px;
+    font-size: 0.8em;
+    font-family: var(--font-mono);
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background-color: var(--button-operator-bg);
+    color: var(--button-digit-text);
+    cursor: pointer;
+}
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background-color: var(--border-color);
+    padding-top: 1px;
+}
+.button-grid button {
+    padding: 8px;
+    font-size: 1.1em;
+    border: none;
+    cursor: pointer;
+    background-color: var(--button-digit-bg);
+    color: var(--button-digit-text);
+    transition: background-color 0.1s;
+}
+.button-grid button:active {
+    opacity: 0.7;
+}
+.button-grid button.operator {
+    background-color: var(--button-operator-bg);
+}
+.button-grid button.equals {
+    background-color: var(--button-equals-bg);
+    color: var(--button-equals-text);
+}

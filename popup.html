@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Chromeculator</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="themer.js"></script>
+</head>
+<body>
+  <div class="calculator-container">
+    <div class="header">
+      <span class="title">Chromeculator</span>
+      <div class="links">
+        <a href="#" id="exportHistory" data-i18n-key="export">Export</a>
+        <a href="#" id="clearHistory" data-i18n-key="clear">Clear</a>
+        <a href="options.html" target="_blank" data-i18n-key="options">Options</a>
+      </div>
+    </div>
+    <div id="history" class="history-area"></div>
+    <div class="input-area">
+      <button id="copyButton" data-i18n-key="copy">Copy</button>
+      <input type="text" id="expression" autofocus autocomplete="off" />
+    </div>
+    <div id="keypad-container" class="keypad-container hidden">
+      <div id="dynamic-buttons" class="dynamic-buttons"></div>
+      <div id="button-grid" class="button-grid">
+        <button data-value="(" class="operator">(</button>
+        <button data-value=")" class="operator">)</button>
+        <button data-value="%" class="operator">%</button>
+        <button data-action="backspace" class="operator">⌫</button>
+        
+        <button data-value="7">7</button>
+        <button data-value="8">8</button>
+        <button data-value="9">9</button>
+        <button data-value="/" class="operator">/</button>
+  
+        <button data-value="4">4</button>
+        <button data-value="5">5</button>
+        <button data-value="6">6</button>
+        <button data-value="*" class="operator">*</button>
+  
+        <button data-value="1">1</button>
+        <button data-value="2">2</button>
+        <button data-value="3">3</button>
+        <button data-value="-" class="operator">-</button>
+  
+        <button data-value="0">0</button>
+        <button data-value=".">.</button>
+        <button data-action="equals" class="equals">=</button>
+        <button data-value="+" class="operator">+</button>
+      </div>
+    </div>
+  </div>
+  <script src="i18n.js"></script>
+  <script src="math.js"></script>
+  <script src="chart.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

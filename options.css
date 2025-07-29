@@ -1,0 +1,115 @@
+:root {
+    --font-main: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'Consolas', 'Courier New', monospace;
+    --bg-main: #f4f4f9;
+    --bg-container: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #555;
+    --text-link: #0066cc;
+    --border-color: #e0e0e0;
+    --input-bg: #ffffff;
+    --input-border: #cccccc;
+    --button-bg: #007bff;
+    --button-text: #ffffff;
+}
+body.dark-theme {
+    --bg-main: #121212;
+    --bg-container: #1e1e2f;
+    --text-primary: #e0e0e0;
+    --text-secondary: #aaaaaa;
+    --text-link: #58a6ff;
+    --border-color: #3a3a50;
+    --input-bg: #2a2a3e;
+    --input-border: #555555;
+    --button-bg: #58a6ff;
+    --button-text: #1e1e2f;
+}
+body {
+    font-family: var(--font-main);
+    padding: 20px;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    transition: background-color 0.2s, color 0.2s;
+}
+.options-container {
+    width: 500px;
+    margin: auto;
+    background-color: var(--bg-container);
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border: 1px solid var(--border-color);
+}
+body.dark-theme .options-container {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+h1, h2 {
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+.option-group {
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+.option-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.option-item label {
+    color: var(--text-secondary);
+}
+.option-item input[type="checkbox"], .option-item select, .option-item input[type="number"], .control-wrapper {
+    margin-left: auto;
+}
+.control-wrapper {
+    text-align: right;
+}
+.sync-warning {
+    display: block;
+    font-size: 0.8em;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-top: 4px;
+}
+input, select, textarea {
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    padding: 6px 8px;
+}
+textarea {
+    width: calc(100% - 20px);
+    font-family: var(--font-mono);
+    margin-top: 5px;
+    min-height: 60px;
+}
+button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: opacity 0.2s;
+}
+button:hover {
+    opacity: 0.9;
+}
+#status {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #28a745;
+}
+.footer {
+    margin-top: 20px;
+    text-align: center;
+}
+.footer a {
+    color: var(--text-link);
+}

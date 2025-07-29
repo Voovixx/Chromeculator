@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chromeculator Help</title>
+    <link rel="stylesheet" href="help.css">
+    <script src="themer.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Chromeculator Help</h1>
+        <p>This calculator uses the powerful <strong>math.js</strong> library, which allows for a wide variety of calculations.</p>
+        
+        <h2>Unit Conversions</h2>
+        <p>You can convert and calculate with various units on the fly.</p>
+        <ul>
+            <li><code>5 cm in inch</code></li>
+            <li><code>2 miles to km</code></li>
+            <li><code>(100 ft + 5 mph * 10 minutes) in yards</code></li>
+        </ul>
+
+        <h2>Currency Converter</h2>
+        <p>The calculator uses live exchange rates to convert major world currencies. Use official 3-letter currency codes.</p>
+        <ul>
+            <li>Syntax: <code>[amount] [CURRENCY_CODE_1] in [CURRENCY_CODE_2]</code></li>
+            <li>Example: <code>15 USD in EUR</code> or <code>720 UAH to RUB</code></li>
+        </ul>
+        
+        <h2>Financial Calculations (Mixed Currencies)</h2>
+        <p>You can perform calculations by mixing different currencies and plain numbers in a single expression.</p>
+        <ul>
+            <li>The calculator will automatically use the <strong>first currency</strong> found as the base currency for the result.</li>
+            <li>All other currencies will be converted to the base currency.</li>
+            <li>Numbers without a currency are treated as being in the base currency.</li>
+            <li>Example: <code>100 USD - 25//lunch// + 1500 RUB</code>. The result will be in USD.</li>
+        </ul>
+        
+        <h2>Working with Percentages</h2>
+        <p>You can use the <code>%</code> sign to calculate percentages just like on a standard calculator.</p>
+        <ul>
+            <li>Add a percentage: <code>100 + 10%</code> (result: 110)</li>
+            <li>Subtract a percentage: <code>75 - 25%</code> (result: 56.25)</li>
+            <li>Find a percentage of a number: <code>50 * 20%</code> (result: 10)</li>
+        </ul>
+        
+        <h2>Comments in Calculations</h2>
+        <p>You can leave text notes right inside your calculations. This is useful for budgeting or complex formulas.</p>
+        <ul>
+            <li>Syntax: <code>//your comment//</code></li>
+            <li>Text inside the double slashes will be ignored during calculation but saved in your history.</li>
+            <li>Example: <code>3600//rent// + 1800//utilities//</code></li>
+        </ul>
+        
+        <h2>Quick History Access</h2>
+        <ul>
+            <li>Use the <strong>Up Arrow</strong> and <strong>Down Arrow</strong> keys in the input field to navigate through your command history.</li>
+            <li>Click on past queries or results to paste them into the input field.</li>
+        </ul>
+
+        <h2>Chained Calculations</h2>
+        <p>You can easily chain calculations by using the result of the previous operation.</p>
+        <ul>
+            <li>
+                <strong>Auto-substitution:</strong> If you start your input with an operator like <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, or <code>^</code>, it will be applied to the last result.<br>
+                <em>Example: First, enter <code>5 * 10</code> (you get 50), then just type <code>/ 2</code>, and the calculator will compute <code>50 / 2</code>.</em>
+            </li>
+            <li>
+                <strong>The <code>ans</code> variable:</strong> For more clarity and complex cases, you can use the <code>ans</code> variable, which always holds the last successful answer.<br>
+                <em>Example: <code>ans ^ 2 - 10</code></em>
+            </li>
+        </ul>
+
+        <h2>Function Plotting</h2>
+        <p>You can plot graphs of single-variable functions using the <code>plot</code> command.</p>
+        <ul>
+            <li>Syntax: <code>plot(function, [min_x, max_x])</code></li>
+            <li>Example: <code>plot(x^2 - 2*x + 1, [-5, 5])</code></li>
+            <li>You can also use constants: <code>plot(sin(x), [-pi, pi])</code></li>
+        </ul>
+
+        <h2>Custom Functions and Constants</h2>
+        <p>In the <strong>Options</strong> page, you can define your own functions and constants for frequently used formulas.</p>
+        <ul>
+            <li>Constant Example: <code>g = 9.81</code></li>
+            <li>Function Example: <code>area(r) = pi * r^2</code></li>
+            <li>Usage: <code>10 * g</code> or <code>area(10)</code></li>
+        </ul>
+        
+        <h2>Advanced Usage</h2>
+        <p>The math.js library supports complex numbers, matrices, statistics, and much more. For a full list of features, visit the <a href="https://mathjs.org/docs/expressions/syntax.html" target="_blank">official math.js documentation</a>.</p>
+    </div>
+</body>
+</html>

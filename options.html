@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chromeculator Options</title>
+    <link rel="stylesheet" href="options.css">
+    <script src="themer.js"></script>
+</head>
+<body>
+    <div class="options-container">
+        <h1 data-i18n-key="optionsTitle">Chromeculator Options</h1>
+        
+        <div class="option-group">
+            <h2 data-i18n-key="generalTitle">General</h2>
+            <div class="option-item">
+                <label for="languageSelect" data-i18n-key="languageLabel">Language:</label>
+                <select id="languageSelect">
+                    <option value="en">English</option>
+                    <option value="ru">Русский</option>
+                </select>
+            </div>
+            <div class="option-item">
+                <label for="theme" data-i18n-key="themeLabel">Theme:</label>
+                <select id="theme">
+                    <option value="light" data-i18n-key="lightTheme">Light</option>
+                    <option value="dark" data-i18n-key="darkTheme">Dark</option>
+                </select>
+            </div>
+            <div class="option-item">
+                <label for="decimalPlaces" data-i18n-key="decimalPlacesLabel">Decimal Places (0-14):</label>
+                <input type="number" id="decimalPlaces" min="0" max="14">
+            </div>
+            <div class="option-item">
+                <label for="enableSync" data-i18n-key="syncLabel" data-i18n-title-key="syncTitle">Enable Sync:</label>
+                <div class="control-wrapper">
+                    <input type="checkbox" id="enableSync">
+                    <small class="sync-warning" data-i18n-key="syncWarning"></small>
+                </div>
+            </div>
+            <div class="option-item">
+                <label for="showKeypad" data-i18n-key="showKeypadLabel">Show Button Keypad:</label>
+                <input type="checkbox" id="showKeypad">
+            </div>
+        </div>
+
+        <div class="option-group">
+            <h2 data-i18n-key="historyTitle">History</h2>
+            <div class="option-item">
+                <label for="saveHistory" data-i18n-key="saveHistoryLabel">Save calculation history:</label>
+                <input type="checkbox" id="saveHistory">
+            </div>
+            <div class="option-item">
+                <label for="historyDays" data-i18n-key="storeHistoryLabel">Store history for (days):</label>
+                <input type="number" id="historyDays" min="1" max="365">
+            </div>
+        </div>
+
+        <div class="option-group">
+            <h2 data-i18n-key="constantsTitle">Custom Constants</h2>
+            <label for="customConstants" data-i18n-key="constantsLabel">Define one constant per line (e.g., g=9.81)</label>
+            <textarea id="customConstants" rows="5"></textarea>
+        </div>
+
+        <div class="option-group">
+            <h2 data-i18n-key="functionsTitle">Custom Functions</h2>
+            <label for="customFunctions" data-i18n-key="functionsLabel">Define one function per line (e.g., f(x) = x^2)</label>
+            <textarea id="customFunctions" rows="5"></textarea>
+        </div>
+
+        <button id="save" data-i18n-key="saveButton">Save Settings</button>
+        <div id="status"></div>
+
+        <div class="footer">
+            <a href="help.html" target="_blank" data-i18n-key="helpRuLink">Справка (RU)</a>
+            <a href="help_en.html" target="_blank" style="margin-left: 15px;" data-i18n-key="helpEnLink">Help (EN)</a>
+        </div>
+    </div>
+    <script src="i18n.js"></script>
+    <script src="options.js"></script>
+</body>
+</html>

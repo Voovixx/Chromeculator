@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chromecalc Installation Guide</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px Gg30px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+            position: relative;
+        }
+        .lang-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 5px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .lang-switcher button {
+            background-color: transparent;
+            border: none;
+            padding: 8px 16px;
+            font-size: 0.9em;
+            font-weight: 500;
+            color: #6c757d;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        .lang-switcher button.active {
+            background-color: #007bff;
+            color: white;
+        }
+        h1 {
+            font-size: 2em;
+            color: #1a1a1a;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        .language-section.hidden {
+            display: none;
+        }
+        ol {
+            list-style-type: none;
+            padding-left: 0;
+            counter-reset: step-counter;
+        }
+        li {
+            counter-increment: step-counter;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+        li::before {
+            content: counter(step-counter);
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-right: 15px;
+            margin-top: -2px;
+        }
+        strong {
+            color: #0056b3;
+        }
+        em {
+            color: #555;
+            font-size: 0.9em;
+            display: block;
+            margin-top: 5px;
+            padding-left: 43px;
+        }
+        .clickable-code {
+            background-color: #e9ecef;
+            color: #495057;
+            padding: 4px 8px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            cursor: pointer;
+            border: 1px solid #dee2e6;
+            transition: all 0.2s ease-in-out;
+            display: inline-block;
+        }
+        .clickable-code:hover {
+            background-color: #ced4da;
+            border-color: #adb5bd;
+        }
+        .clickable-code.copied {
+            background-color: #d1e7dd;
+            border-color: #a3cfbb;
+            color: #0a3622;
+            cursor: default;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e9ecef;
+        }
+        .telegram-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background-color: #0088cc;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1em;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.2);
+        }
+        .telegram-link:hover {
+            background-color: #007ab8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 136, 204, 0.3);
+        }
+        .telegram-link svg {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="lang-switcher">
+            <button data-lang="en">EN</button>
+            <button data-lang="ru">RU</button>
+        </div>
+
+        <!-- English Section -->
+        <div id="lang-en" class="language-section">
+            <h1>🚀 How to Install the Chromecalc Extension</h1>
+            <p>You will need the `Chromecalc` folder with all the extension files.</p>
+            <ol>
+                <li>
+                    <div>
+                        Open Chrome, then click on the address below to copy it. Paste it into the address bar and press Enter.
+                        <br>
+                        <code class="clickable-code">chrome://extensions</code>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        In the top right corner, enable <strong>Developer mode</strong>.
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        Click the <strong>Load unpacked</strong> button that appears.
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        Select the <strong>entire project folder</strong> (`Chromecalc`).<br>
+                        <em>You do not need to go inside the folder, just select it and click "Select Folder".</em>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        ✅ Done! The calculator icon will appear on your Chrome toolbar.
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Russian Section -->
+        <div id="lang-ru" class="language-section">
+            <h1>🚀 Инструкция по установке расширения Chromecalc</h1>
+            <p>Вам понадобится папка `Chromecalc` со всеми файлами расширения.</p>
+            <ol>
+                <li>
+                    <div>
+                        Откройте Chrome, затем нажмите на адрес ниже, чтобы скопировать его. Вставьте его в адресную строку и нажмите Enter.
+                        <br>
+                        <code class="clickable-code">chrome://extensions</code>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        В правом верхнем углу включите <strong>Режим разработчика</strong>.
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        Нажмите на появившуюся кнопку <strong>Загрузить распакованное расширение</strong>.
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        Выберите <strong>всю папку</strong> с проектом (`Chromecalc`).<br>
+                        <em>Не нужно заходить внутрь папки, просто выделите её и нажмите "Выбор папки".</em>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        ✅ Готово! Иконка калькулятора появится на панели инструментов Chrome.
+                    </div>
+                </li>
+            </ol>
+        </div>
+        
+        <!-- Telegram Link Section -->
+        <div class="footer">
+            <a href="https://t.me/Synthread" target="_blank" class="telegram-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12a12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472a.44.44 0 0 1-.013.065c-.232 2.14-1.157 6.94-1.631 9.242c-.22.99-.646 1.226-.975 1.242c-.813.04-1.117-.5-1.74-1.012c-.328-.27-.611-.53-.941-.814c-.655-.56-1.02-1.027-.631-1.614c.14-.21.284-.42.427-.63c.873-1.293 1.74-2.593 2.61-3.882l.002-.005c.08-.112.037-.26-.088-.32c-.126-.06-.279-.01-.36.104l-.002.004a111.45 111.45 0 0 1-3.83 2.583c-.56.336-1.05.51-1.59.502c-.54-.007-1.042-.14-1.503-.402c-.553-.314-.925-.75-1.09-1.25c-.16-.48.006-.961.4-1.423C3.51 9.59 4.79 8.87 6.07 8.149c4.25-2.39 6.86-3.41 7.82-3.426c.22-.004.425.034.58.115c.155.08.26.202.296.353a.81.81 0 0 1 .016.133v.001z"/></svg>
+                <span>@Synthread</span>
+            </a>
+        </div>
+        
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langSwitcher = document.querySelector('.lang-switcher');
+            const langSections = document.querySelectorAll('.language-section');
+            const langButtons = document.querySelectorAll('.lang-switcher button');
+
+            const setLanguage = (lang) => {
+                langSections.forEach(section => {
+                    section.classList.toggle('hidden', section.id !== `lang-${lang}`);
+                });
+                langButtons.forEach(button => {
+                    button.classList.toggle('active', button.dataset.lang === lang);
+                });
+            };
+
+            langSwitcher.addEventListener('click', (event) => {
+                const button = event.target.closest('button[data-lang]');
+                if (button) {
+                    setLanguage(button.dataset.lang);
+                }
+            });
+
+            // Auto-detect language on load
+            const browserLang = navigator.language.slice(0, 2);
+            setLanguage(browserLang === 'ru' ? 'ru' : 'en');
+        });
+
+        document.querySelectorAll('.clickable-code').forEach(element => {
+            element.addEventListener('click', () => {
+                const textToCopy = element.textContent;
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    const originalText = element.textContent;
+                    element.innerHTML = '✓ Copied!';
+                    element.classList.add('copied');
+                    
+                    setTimeout(() => {
+                        element.innerHTML = originalText;
+                        element.classList.remove('copied');
+                    }, 1500);
+                }).catch(err => {
+                    console.error('Failed to copy: ', err);
+                    alert('Could not copy text.');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
