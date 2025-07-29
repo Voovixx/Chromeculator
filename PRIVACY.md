@@ -1,6 +1,6 @@
 # Privacy Policy for Chromeculator
 
-**Effective date:** October 26, 2023
+**Effective date:** July 29, 2025
 
 Chromeculator ("we," "us," or "our") does not collect, store, or transmit any personally identifiable information from its users.
 
